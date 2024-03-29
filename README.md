@@ -13,7 +13,7 @@ pandas 1.3.5
 sk-learn 1.0.2
 
 ## How to use
-The specific steps for using our code will be presented after the paper is officially accepted.
+In order to enhance the readability of the program, we need a period of time to optimize and organize the program. The specific steps for using our program will be presented after the paper is officially accepted. Thank you for your understanding.
 
 
 

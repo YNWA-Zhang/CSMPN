@@ -100,18 +100,21 @@ class FCN(nn.Module):
         return x
 
 class Dis(nn.Module):
-    def __init__(self, in_channel=128, out_channel=3):
+    def __init__(self, in_channel=1200, out_channel=2):
         super(Dis, self).__init__()
         self.in_channel = in_channel
         self.fc1 = nn.Sequential(
-            nn.Linear(in_channel, 64),
-            nn.ReLU(inplace=True))
+            nn.Linear(in_channel, 400))
         self.fc2 = nn.Sequential(
-            nn.Linear(64, out_channel))
+            nn.Linear(400, 100),
+            nn.ReLU(inplace=True))
+        self.fc3 = nn.Sequential(
+            nn.Linear(100, out_channel))
 
     def forward(self, x):
         x = self.fc1(x)
         x = self.fc2(x)
+        x = self.fc3(x)
 
         return x
 

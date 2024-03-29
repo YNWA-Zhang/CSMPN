@@ -13,6 +13,7 @@ pandas 1.3.5
 sk-learn 1.0.2
 
 ## How to use
+The specific steps for using our code will be presented after the paper is officially accepted.
 
 
 

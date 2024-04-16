@@ -18,22 +18,16 @@ from tqdm import tqdm
 
 class GradReverse(Function):
 
-    # 重写父类方法的时候，最好添加默认参数，不然会有warning（为了好看。。）
     @ staticmethod
     def forward(ctx, x, lambd, **kwargs: None):
-        #　其实就是传入dict{'lambd' = lambd}
         ctx.lambd = lambd
         return x.view_as(x)
 
     @staticmethod
     def backward(ctx, *grad_output):
-        # 传入的是tuple，我们只需要第一个
         return grad_output[0] * -ctx.lambd, None
 
-    # 这样写是没有warning，看起来很舒服，但是显然是多此一举咯，所以也可以改写成
-
     def backward(ctx, grad_output):
-        # 直接传入一格数
         return grad_output * -ctx.lambd, None
 
 class CNN(nn.Module):

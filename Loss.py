@@ -151,7 +151,7 @@ def search_pseudo1(list1,confi,z,way):
         b=np.array(a[0]+i*100)
         confidence.extend(b)
     for j in range(len(list1)):
-        sample_prediction = list1[j]  # 获取第 i 个样本的输出值
+        sample_prediction = list1[j]  
         if all(lower_uncer[j] <= sample_prediction) and all(sample_prediction <= upper_uncer[j]):
             uncertainty.append(j)
     list_total= np.intersect1d(confidence,uncertainty)

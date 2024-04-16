@@ -33,14 +33,14 @@ source_lbd1 = source_lbd1['source_1']
 source_lbd2 = scio.loadmat('source_2.mat')
 source_lbd2 = source_lbd2['source_2']
 
-source1 = scio.loadmat('SUDAbearing_0kN_fft7.mat')
-source1 = source1['SUDAbearing_0kN_fft7']
+source1 = scio.loadmat('0kN_7.mat')
+source1 = source1['0kN_7']
 
-source2 = scio.loadmat('SUDAbearing_1kN_fft7.mat')
-source2 = source2['SUDAbearing_1kN_fft7']
+source2 = scio.loadmat('1kN_7.mat')
+source2 = source2['1kN_7']
 
-target = scio.loadmat('SUDAbearing_2kN_fft7.mat')
-target = target['SUDAbearing_2kN_fft7']#1000*1200
+target = scio.loadmat('2kN_7.mat')
+target = target['2kN_7']
 
 label = scio.loadmat('label7.mat')
 label = label['label7']
@@ -139,8 +139,8 @@ label_src1_s1_pse=label_src1_s1_pse.cuda()
 source2_s2_pse=source2_s2_pse.cuda()
 label_src2_s2_pse=label_src2_s2_pse.cuda()
 
-s_label = torch.topk(s_label, 1)[1].squeeze(1)#此处需要将onehot标签转换为普通标签
-t_label = torch.topk(t_label, 1)[1].squeeze(1)#此处需要将onehot标签转换为普通标签
+s_label = torch.topk(s_label, 1)[1].squeeze(1)
+t_label = torch.topk(t_label, 1)[1].squeeze(1)
 label_src1_j_pse = torch.topk(label_src1_j_pse, 1)[1].squeeze(1)
 label_src2_j_pse = torch.topk(label_src2_j_pse, 1)[1].squeeze(1)
 label_src1_s1_pse = torch.topk(label_src1_s1_pse, 1)[1].squeeze(1)

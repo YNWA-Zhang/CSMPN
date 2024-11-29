@@ -13,7 +13,7 @@ pandas 1.3.5
 sk-learn 1.0.2
 
 ## How to use
-The code will gradually be improved.
+Please review the file 'Code description.txt'
 
 ## Contact
 If you have any questions about the codes, please contact us:1627306233@qq.com

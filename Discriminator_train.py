@@ -60,8 +60,8 @@ source=source.cuda()
 label = label.cuda()
 label = torch.topk(label, 1)[1].squeeze(1)
 
-for epoch in range(0, 500):
-    logging.info('-' * 5 + 'Epoch {}/{}'.format(epoch, 500) + '-' * 5)
+for epoch in range(0, 1000):
+    logging.info('-' * 5 + 'Epoch {}/{}'.format(epoch, 1000) + '-' * 5)
     Feat_extractor.train()
     Dis.train()
     optimizer_fe = optim.SGD(Feat_extractor.parameters(), lr=learning_rate, momentum=0.9,

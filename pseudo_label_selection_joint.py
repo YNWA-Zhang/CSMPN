@@ -57,11 +57,6 @@ s_label = s_label['label7']
 s_label=torch.FloatTensor(s_label)
 s_label = torch.topk(s_label, 1)[1].squeeze(1)
 
-t_label = scio.loadmat('label7.mat')
-t_label = t_label['label7']
-t_label=torch.FloatTensor(t_label)
-t_label = torch.topk(t_label, 1)[1].squeeze(1)
-
 output_src1=[]
 for _ in range(10):
     with torch.no_grad():

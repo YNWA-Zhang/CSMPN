@@ -1,0 +1,15 @@
+#Model pre-training
+Run 'Discriminator_train.py' and 'Weight_compute.py' to get the weight of each source domain
+
+Run 'Pre_train.py' to save the model parameters of the model
+Run 'pseudo_label_selection_joint.py', 'pseudo_label_selection_ind1.py' and 'pseudo_label_selection_ind2.py' to get the pseudo labels of the domain-shared and domain-individual branches
+
+#Model training
+Run 'Train1' for domain alignment in each branch
+Run 'feature_output_joint_train.py', 'feature_output_ind1_train.py' and 'feature_output_ind2_train.py' to save the target output in each branch
+Run 'mutual_learning.py' to get the sample indexes of high- and low-confident target samples
+Run 'save_target_high_low_confidence.py' to save the high- and low-confident target samples via sample indexes in the target domain
+Run 'Train2.py' for cross-supervised learning
+
+#Model testing
+Run 'model_test' to check the model accuracy
